@@ -6,10 +6,10 @@ import test.test_objects as test_objects
 
 class SerializeTester(unittest.TestCase):
 #---------JSON---------
-    json = Factory.create_serializer('json')
-    yaml = Factory.create_serializer('yaml')
-    toml = Factory.create_serializer('toml')
-    pickle = Factory.create_serializer('pickle')
+    json = Factory.create_serializer('.json')
+    yaml = Factory.create_serializer('.yaml')
+    toml = Factory.create_serializer('.toml')
+    pickle = Factory.create_serializer('.pickle')
 
     def test_json_int(self):
         ser = SerializeTester.json
@@ -354,7 +354,7 @@ class SerializeTester(unittest.TestCase):
         old_obj = test_objects.dict_test
         new_obj = ser.loads(ser.dumps(old_obj))
         self.assertEqual(old_obj, new_obj)
-        
+
     def test_json_frozenset(self):
         ser = SerializeTester.json
         old_obj = test_objects.frozenset_test

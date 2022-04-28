@@ -7,13 +7,13 @@ from serializers.yaml_serializer.yaml_serializer import Yaml
 
 class Factory:
     def create_serializer(format):
-        if format == "json":
+        if format == ".json":
             return Json()
-        elif format == "pickle":
+        elif format == ".pickle":
             return Pickle()
-        elif format == "toml":
+        elif format == ".toml":
             return Toml()
-        elif format == "yaml":
+        elif format == ".yaml":
             return Yaml()
         else:
             raise ValueError("Unacceptable value")
