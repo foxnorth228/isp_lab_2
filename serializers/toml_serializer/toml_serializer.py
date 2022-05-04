@@ -1,5 +1,3 @@
-import sys
-sys.path.append('./')
 from serializers.objectPack.objectPack import convert, deconvert
 
 class Toml:

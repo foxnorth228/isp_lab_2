@@ -1,8 +1,6 @@
-import sys
-sys.path.append('./')
 import unittest
 from factory.factory import Factory
-import test.test_objects as test_objects
+import test_objects
 
 class SerializeTester(unittest.TestCase):
 #---------JSON---------
@@ -80,8 +78,8 @@ class SerializeTester(unittest.TestCase):
     def test_json_simple_func(self):
         ser = SerializeTester.json
         old_obj = test_objects.simple_func
-        ser.dump(old_obj, '.\\test\\test.json')
-        new_obj = ser.load('.\\test\\test.json')
+        ser.dump(old_obj, 'test.json')
+        new_obj = ser.load('test.json')
         self.assertEqual(old_obj(4), new_obj(4))
 
     def test_json_cmplx_func(self):
@@ -172,8 +170,8 @@ class SerializeTester(unittest.TestCase):
     def test_yaml_simple_func(self):
         ser = SerializeTester.yaml
         old_obj = test_objects.simple_func
-        ser.dump(old_obj, '.\\test\\test.yaml')
-        new_obj = ser.load('.\\test\\test.yaml')
+        ser.dump(old_obj, 'test.yaml')
+        new_obj = ser.load('test.yaml')
         self.assertEqual(old_obj(4), new_obj(4))
 
     def test_yaml_cmplx_func(self):
@@ -274,8 +272,8 @@ class SerializeTester(unittest.TestCase):
     def test_toml_simple_func(self):
         ser = SerializeTester.toml
         old_obj = test_objects.simple_func
-        ser.dump(old_obj, '.\\test\\test.toml')
-        new_obj = ser.load('.\\test\\test.toml')
+        ser.dump(old_obj, 'test.toml')
+        new_obj = ser.load('test.toml')
         self.assertEqual(old_obj(4), new_obj(4))
 
     def test_toml_cmplx_func(self):
@@ -364,8 +362,8 @@ class SerializeTester(unittest.TestCase):
     def test_json_simple_func(self):
         ser = SerializeTester.pickle
         old_obj = test_objects.simple_func
-        ser.dump(old_obj, '.\\test\\test.pickle')
-        new_obj = ser.load('.\\test\\test.pickle')
+        ser.dump(old_obj, 'test.pickle')
+        new_obj = ser.load('test.pickle')
         self.assertEqual(old_obj(4), new_obj(4))
 
     def test_pickle_lambda(self):

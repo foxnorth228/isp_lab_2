@@ -1,5 +1,3 @@
-import sys
-sys.path.append('./')
 from serializers.objectPack.objectPack import convert, deconvert
 
 class Json:
@@ -28,6 +26,7 @@ class Json:
             return self.to_str_collection(obj, name)
         if isinstance(obj, dict):
             return self.to_str_dict(obj, name)
+        print(obj)
         return self.to_str_class_obj(obj, name)
 
     def to_str_primitive(self, obj, name):

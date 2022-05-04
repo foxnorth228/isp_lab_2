@@ -1,5 +1,3 @@
-import sys
-sys.path.append('./')
 from serializers.json_serializer.json_serializer import Json
 from serializers.pickle_serializer.pickle_serializer import Pickle
 from serializers.toml_serializer.toml_serializer import Toml

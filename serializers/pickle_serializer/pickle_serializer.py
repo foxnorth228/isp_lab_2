@@ -1,5 +1,3 @@
-import sys
-sys.path.append('./')
 import pickle
 from serializers.objectPack.objectPack import convert, deconvert
 
